@@ -29,7 +29,7 @@ p {
     background-image: url('/sites/zweb/images/analytics/feature/feature-overview.webp');
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 110px 0 55px;
+    padding: 110px 0 150px;
     margin-top: -70px;
 
 }
@@ -245,6 +245,131 @@ body.umain .dwnload-btn {
 
 .formSec .signup-box {
     max-width: 100%
+}
+
+
+/* customer and trusted section */
+
+.za-customer-section {
+    background-color: #F8F9FC;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.za-promo-section {
+    color: var(--primary-font-color);
+    padding: 0px 40px 50px;
+}
+
+.za-gartner-wrap {
+    background-color: #fff;
+    border-radius: 117px;
+    max-width: 870px;
+    margin: -80px auto 0;
+    padding: 30px 20px 20px;
+    border-width: 1px 1px 0px 1px;
+    border-style: solid;
+    border-color: var(--secondary-color);
+    box-shadow: 0px 4px 22px 0px #00000017;
+}
+
+.zag-promo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 20px
+}
+
+/* .zag-promo-box .zga-promo-img {
+    width: 200px;
+    text-align: center
+} */
+.zag-promo-box p {
+    margin: 0;
+    line-height: 26px
+}
+
+.zag-promo-box a {
+    color: #fff;
+    position: relative
+}
+
+.zag-promo-box>div:nth-child(2) {
+    max-width: 580px
+}
+
+.zag-promo-box>div:nth-child(2) p img {
+    margin-left: 10px;
+}
+
+.za-cust-counts ul {
+    display: flex;
+    max-width: 850px;
+    margin: 60px auto 0;
+    text-align: center;
+    justify-content: center
+}
+
+.za-cust-counts ul>li {
+    width: 30%;
+    position: relative
+}
+
+.za-cust-counts ul>li p {
+    margin: 0;
+    font-size: 20px
+}
+
+.za-cust-counts ul>li>span {
+    font-size: 50px;
+    line-height: 50px;
+    font-family: var(--zf-secondary-medium)
+}
+
+.za-cust-counts ul>li>span:after {
+    content: '+';
+    font-family: var(--zf-primary-extralight)
+}
+
+.za-cust-counts ul>li:not(:first-child):before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 50%;
+    background: #601d1c;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    opacity: .2
+}
+
+.trusted-icon-wrap {
+    padding: 0px 10px 50px;
+    overflow: hidden;
+}
+
+.trust-icon-wrap {
+    overflow: hidden;
+    display: flex
+}
+
+.trust-icon .ae-icon {
+    margin: 0 150px 0 0;
+    font-size: 0;
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+    float: none;
+    min-height: 100px;
+    vertical-align: top
+}
+
+.trust-icon .ae-icon img {
+    display: block;
+    transform: scale(1.15)
 }
 
 /* Tab-btn and accordian styles */
@@ -464,10 +589,6 @@ body.umain .dwnload-btn {
     background: #c8c8c878;
     padding: 6px 6px 6px 6px;
     backdrop-filter: blur(11px);
-}
-
-.tab-wrapper-horizontal .accordion_images .accordion-image {
-    height: 510px;
 }
 
 .tab-wrapper-vertical .accordion-image {
@@ -755,9 +876,103 @@ body.umain .dwnload-btn {
 /* media query  */
 
 
+@media only screen and (max-width :1440px) {
+    .za-banner-section {
+        padding: 0
+    }
+
+    .signup-box {
+        top: 60px
+    }
+
+    .za-banner-img>ul>li:nth-child(3) {
+        bottom: 170px
+    }
+
+    .trust-icon .ae-icon {
+        margin: 0 120px 0 0
+    }
+}
+
+@media only screen and (max-width :1366px) {
+    .za-banner-section {
+        padding: 20px 0 0
+    }
+
+    .signup-box {
+        max-width: 400px;
+        top: 60px;
+        left: 0
+    }
+
+    .za-banner-img>ul>li img {
+        max-width: 56px
+    }
+
+    .za-banner-img>ul>li:first-child {
+        right: 0;
+        top: 40px
+    }
+
+    .za-banner-img>ul>li:nth-child(2) {
+        top: 310px;
+        left: 40px
+    }
+
+    .za-banner-img>ul>li:nth-child(3) {
+        right: 0;
+        bottom: 130px
+    }
+
+    .za-promo-section {
+        padding: 40px 40px 60px
+    }
+
+    .za-cust-counts ul>li>span {
+        font-size: 42px;
+        line-height: 42px
+    }
+
+    .trust-icon .ae-icon img {
+        transform: scale(1.05)
+    }
+
+    .za-gartner-wrap img {
+        max-width: 160px
+    }
+}
+
+
 @media (max-width:1199) {
     .content-main-wrapper.sticky {
         top: 0;
+    }
+
+    .za-banner-section {
+        padding: 20px 0 100px
+    }
+
+    .signup-box {
+        left: 0;
+        top: 50px;
+        position: relative
+    }
+
+    .za-banner-img>ul {
+        display: none
+    }
+
+    .za-banner-img>ul>li:nth-child(2) {
+        left: 40px
+    }
+
+    .za-banner-img>ul>li:first-child,
+    .za-banner-img>ul>li:nth-child(3) {
+        right: -20px
+    }
+
+    .za-banner-img>ul>li img {
+        max-width: 40px
     }
 }
 
@@ -851,6 +1066,86 @@ body.umain .dwnload-btn {
 
 }
 
+@media only screen and (max-width :1024px) {
+    .za-banner-section {
+        padding: 20px 0 120px
+    }
+
+    .za-banner-img>ul>li:nth-child(2) {
+        left: -30px;
+        top: 260px
+    }
+
+    .za-gartner-wrap img {
+        max-width: 140px
+    }
+
+    .za-gartner-wrap p {
+        font-size: 16px
+    }
+
+    .trust-icon .ae-icon {
+        margin: 0 80px 0 0
+    }
+
+    .trust-icon .ae-icon img {
+        transform: scale(.85)
+    }
+}
+
+@media only screen and (max-width :991px) {
+    .za-banner-section {
+        padding: 0
+    }
+
+    .za-banner-box {
+        flex-direction: column
+    }
+
+    .za-cta-box {
+        justify-content: center;
+        margin: 30px 0 0
+    }
+
+    .za-banner-img {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto
+    }
+
+    .trust-icon .ae-icon {
+        margin: 0 60px 0 0
+    }
+
+    .za-promo-section {
+        padding: 20px 40px 40px
+    }
+
+    .za-gartner-wrap {
+        max-width: 600px
+    }
+
+    .zag-promo-box {
+        gap: 15px 30px;
+        flex-wrap: wrap;
+        flex-direction: column
+    }
+
+    .za-gartner-wrap p {
+        font-size: 16px;
+        line-height: 26px;
+        text-align: center
+    }
+
+    .zag-promo-box>div:nth-child(2) {
+        max-width: 340px
+    }
+
+    .za-cust-counts ul {
+        margin: 40px auto 0
+    }
+}
+
 @media (max-width: 768px) {
 
     .Home_accordion_inner {
@@ -894,6 +1189,29 @@ body.umain .dwnload-btn {
     .btn-with-tab .content-main {
         gap: 12px;
     }
+
+    .za-cta-box {
+        flex-wrap: wrap
+    }
+
+    .za-gartner-wrap {
+        text-align: center;
+        max-width: 450px;
+        gap: 10px 20px
+    }
+
+    .za-gartner-wrap p {
+        line-height: 24px
+    }
+
+    .za-cust-counts ul>li>span {
+        font-size: 38px;
+        line-height: 38px
+    }
+
+    .za-cust-counts ul>li p {
+        font-size: 17px
+    }
 }
 
 @media (max-width: 576px) {
@@ -911,8 +1229,91 @@ body.umain .dwnload-btn {
     .accordian-spacing {
         margin-top: 20px;
     }
-    .accordian-change .Home_accordion{
+
+    .accordian-change .Home_accordion {
         text-align: center;
+    }
+
+    .trusted-icon-wrap {
+        padding: 0px 10px 0px;
+    }
+    .za-customer-section{
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width :480px) {
+    .za-cta-box {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start
+    }
+
+    .za-banner-img {
+        display: none
+    }
+
+    .za-banner-img>ul {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: scale(.6)
+    }
+
+    .za-banner-img>ul>li:first-child,
+    .za-banner-img>ul>li:nth-child(3) {
+        right: -70px
+    }
+
+    .za-banner-img>ul>li:first-child {
+        top: -80px
+    }
+
+    .za-banner-img>ul>li:nth-child(2) {
+        left: -90px;
+        top: 140px
+    }
+
+    .za-banner-img>ul>li:nth-child(3) {
+        bottom: 0
+    }
+
+    .za-gartner-wrap img {
+        max-width: 120px
+    }
+
+    .za-gartner-wrap>div:nth-child(2) {
+        max-width: 200px
+    }
+
+    .za-promo-section {
+        padding: 20px 15px 40px
+    }
+
+    .za-cust-counts ul>li>span {
+        font-size: 30px;
+        line-height: 30px
+    }
+
+    .za-cust-counts ul>li p {
+        font-size: 14px
+    }
+
+    .za-gartner-wrap {
+        max-width: 330px;
+        border-radius: 30px;
+    }
+
+    .trust-icon .ae-icon {
+        margin: 0 50px 0 0
+    }
+
+    .zrmore-cta {
+        padding: 0 15px 0 0;
+        font-size: 15px;
+        line-height: 26px
     }
 }
 
