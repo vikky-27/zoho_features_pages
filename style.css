@@ -10,19 +10,6 @@
     --fourth-bg: #F0F9FF;
 }
 
-
-p {
-    margin: 0;
-    font-family: var(--secondary-font-family)
-}
-
-.content-wrap {
-    position: relative;
-    width: 90%;
-    max-width: 1280px;
-    margin: 0 auto
-}
-
 /* Banner section styles */
 
 .banner-section {
@@ -31,6 +18,8 @@ p {
     background-size: cover;
     padding: 110px 0 150px;
     margin-top: -70px;
+    overflow: hidden;
+    width: 100%;
 
 }
 
@@ -292,8 +281,9 @@ body.umain .dwnload-btn {
 }
 
 .zag-promo-box a {
-    color: #fff;
-    position: relative
+    color: var(--zwc-link-clr);
+    position: relative;
+    font-family: var(--zf-primary-semibold);
 }
 
 .zag-promo-box>div:nth-child(2) {
@@ -309,7 +299,7 @@ body.umain .dwnload-btn {
     max-width: 850px;
     margin: 60px auto 0;
     text-align: center;
-    justify-content: center
+    justify-content: center;
 }
 
 .za-cust-counts ul>li {
@@ -418,9 +408,13 @@ body.umain .dwnload-btn {
     height: 100%;
     background-image: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     z-index: -1;
-    transition: transform 0.5s ease;
-    transform: scaleX(0);
-    transform-origin: right;
+    opacity: 0;
+    -webkit-transform: scale3d(0.7, 1, 1);
+    transform: scale3d(0.7, 1, 1);
+    -webkit-transition: -webkit-transform .4s, opacity .4s;
+    transition: transform .8s, opacity .7s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 .btn-with-tab .tab-btn.active-tab {
@@ -428,8 +422,9 @@ body.umain .dwnload-btn {
 }
 
 .btn-with-tab .tab-btn.active-tab::before {
-    transform: scaleX(1);
-    transform-origin: left;
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .btn-with-tab .content-main {
@@ -466,27 +461,41 @@ body.umain .dwnload-btn {
 .btn-with-tab .tab1 .accordion_images,
 .btn-with-tab .tab13 .accordion_images,
 .btn-with-tab .tab5 .accordion_images,
-.btn-with-tab .tab9 .accordion_images {
+.btn-with-tab .tab9 .accordion_images,
+.btn-with-tab .tab1 .accordian-mobile-image,
+.btn-with-tab .tab13 .accordian-mobile-image,
+.btn-with-tab .tab5 .accordian-mobile-image,
+.btn-with-tab .tab9 .accordian-mobile-image {
     background-image: url('/sites/zweb/images/analytics/integrate-bg.png')
 }
 
 .btn-with-tab .tab2 .accordion_images,
 .btn-with-tab .tab6 .accordion_images,
 .btn-with-tab .tab10 .accordion_images,
-.btn-with-tab .tab14 .accordion_images {
+.btn-with-tab .tab14 .accordion_images,
+.btn-with-tab .tab2 .accordian-mobile-image,
+.btn-with-tab .tab6 .accordian-mobile-image,
+.btn-with-tab .tab10 .accordian-mobile-image,
+.btn-with-tab .tab14 .accordian-mobile-image {
     background-image: url('/sites/zweb/images/analytics/feature/prepare_bg.png');
     padding: 15px 20px 0px 20px;
 }
 
 .btn-with-tab .tab3 .accordion_images,
 .btn-with-tab .tab7 .accordion_images,
-.btn-with-tab .tab11 .accordion_images {
+.btn-with-tab .tab11 .accordion_images,
+.btn-with-tab .tab3 .accordian-mobile-image,
+.btn-with-tab .tab7 .accordian-mobile-image,
+.btn-with-tab .tab11 .accordian-mobile-image {
     background-image: url('/sites/zweb/images/analytics/feature/visualize.png');
 }
 
 .btn-with-tab .tab4 .accordion_images,
 .btn-with-tab .tab8 .accordion_images,
-.btn-with-tab .tab12 .accordion_images {
+.btn-with-tab .tab12 .accordion_images,
+.btn-with-tab .tab4 .accordian-mobile-image,
+.btn-with-tab .tab8 .accordian-mobile-image,
+.btn-with-tab .tab12 .accordian-mobile-image {
     background-image: url('/sites/zweb/images/analytics/feature/genai-bg.png');
     padding: 15px 20px 0px 20px;
 }
@@ -1018,7 +1027,13 @@ body.umain .dwnload-btn {
 
     .accordian-mobile-image {
         display: block;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 10px !important;
+        border-radius: 8px;
     }
+
+
 
     .btn-with-tab .accordion_images {
         display: none;
@@ -1237,7 +1252,8 @@ body.umain .dwnload-btn {
     .trusted-icon-wrap {
         padding: 0px 10px 0px;
     }
-    .za-customer-section{
+
+    .za-customer-section {
         margin-bottom: 10px;
     }
 }
